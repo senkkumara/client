@@ -27,8 +27,6 @@ public class Logger extends PrintStream {
         
         try {
             os = new FileOutputStream(file, true);
-            //System.setOut(new PrintStream(os));
-            //System.setErr(new PrintStream(os));
         }
         catch (FileNotFoundException e) {
             e.printStackTrace();
