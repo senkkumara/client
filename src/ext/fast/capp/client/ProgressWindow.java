@@ -73,6 +73,7 @@ public class ProgressWindow implements Runnable {
             window.setModal(true);
             worker.start();
             window.setVisible(true);
+            window.setAlwaysOnTop(true);
             window.dispose();
             return;
         }

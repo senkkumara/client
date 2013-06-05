@@ -59,7 +59,8 @@ public class FrameGetToolingNumber extends JDialog implements CAPPConstants {
 
         ScreenUtil.centerWindow(this);
         setModal(true);
-        show();
+       	setVisible(true);
+       	setAlwaysOnTop(true);
         dispose();
 
         HashMap vars = Settings.getVariables();

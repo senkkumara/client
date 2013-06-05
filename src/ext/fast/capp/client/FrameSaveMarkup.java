@@ -97,7 +97,8 @@ public class FrameSaveMarkup extends JDialog implements CAPPConstants,
 
         // 显示UI
         setModal(true);
-        show();
+        setVisible(true);
+        setAlwaysOnTop(true);
         dispose();
         
         // 如果未生成message, 表示用户取消操作

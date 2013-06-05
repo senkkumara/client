@@ -242,6 +242,7 @@ public class FrameSearchDocument extends JDialog implements CAPPConstants,
 		// 显示窗口
 		setModal(true);
 		setVisible(true);
+		setAlwaysOnTop(true);
 		dispose();
 
 		HashMap<String, Object> vars = Settings.getVariables();

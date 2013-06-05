@@ -157,7 +157,8 @@ public class FrameCheckinDocument extends JDialog implements CAPPConstants,
 
 		// 显示窗口
 		setModal(true);
-		this.setVisible(true);
+		setVisible(true);
+		setAlwaysOnTop(true);
 		dispose();
 
 		HashMap<String, Object> vars = Settings.getVariables();
