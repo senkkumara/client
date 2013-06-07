@@ -4,6 +4,7 @@
 package ext.fast.capp.client;
 
 import java.awt.Cursor;
+import java.awt.Dialog;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -96,7 +97,7 @@ public class FrameSaveMarkup extends JDialog implements CAPPConstants,
             txtDescription.setText((String) capp.get(DESCRIPTION));
 
         // 显示UI
-        setModal(true);
+        setModalityType(Dialog.DEFAULT_MODALITY_TYPE);
         setVisible(true);
         setAlwaysOnTop(true);
         dispose();

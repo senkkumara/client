@@ -7,6 +7,7 @@ package ext.fast.capp.client;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
+import java.awt.Dialog;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -176,7 +177,7 @@ public class FrameSearchPart extends JDialog implements ActionListener,
 		}
 
 		// 显示窗口
-		setModal(true);
+		setModalityType(Dialog.DEFAULT_MODALITY_TYPE);
 		setVisible(true);
 		setAlwaysOnTop(true);
 		dispose();

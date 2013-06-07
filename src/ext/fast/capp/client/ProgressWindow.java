@@ -6,6 +6,7 @@ package ext.fast.capp.client;
 
 import java.awt.BorderLayout;
 import java.awt.Cursor;
+import java.awt.Dialog;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.GraphicsEnvironment;
@@ -70,7 +71,7 @@ public class ProgressWindow implements Runnable {
      */
     public void show() {
         if (EventQueue.isDispatchThread()) {
-            window.setModal(true);
+            window.setModalityType(Dialog.DEFAULT_MODALITY_TYPE);
             worker.start();
             window.setVisible(true);
             window.setAlwaysOnTop(true);

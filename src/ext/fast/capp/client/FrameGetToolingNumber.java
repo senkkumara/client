@@ -1,6 +1,7 @@
 package ext.fast.capp.client;
 
 import java.awt.Cursor;
+import java.awt.Dialog;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Window;
@@ -58,7 +59,7 @@ public class FrameGetToolingNumber extends JDialog implements CAPPConstants {
         txtClass.setText("");
 
         ScreenUtil.centerWindow(this);
-        setModal(true);
+        setModalityType(Dialog.DEFAULT_MODALITY_TYPE);
        	setVisible(true);
        	setAlwaysOnTop(true);
         dispose();
