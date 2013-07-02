@@ -114,18 +114,22 @@ public class FrameCheckinDocument extends JDialog implements CAPPConstants,
 		// 获取基本调用参数
 		String windowCaption = (String) capp.get(WINDOW_CAPTION);
 		String docNumber = (String) capp.get(DOC_NUMBER);
-		//处理文档编号
-		if(getCharSize(docNumber, '-') < 1)
-			throw new Exception("请输入正确的工艺编号!");
-		docNumber = getNumberFromStr(docNumber);//截取工艺编号
 		String docName = (String) capp.get(DOC_NAME);
 		String docType = (String) capp.get(DOC_TYPE);
+		
+		System.out.println("docType:" + docType);
 		String newDocStr = (String) capp.get(DOC_NEW);
 		String relPartNumber = (String) capp.get(RELATED_PART_NUMBER);
 		docNumbered = docNumber != null && !docNumber.trim().equals("");
 		newDocument = newDocStr != null && newDocStr.equalsIgnoreCase("true");
+
 		if (docNumber == null || docNumber.trim().equals(""))
 			throw new Exception("检入文档必需指定文档编号！");
+		if(docType.equals("工艺文档") && getCharSize(docNumber, '-') < 2)
+			throw new Exception("请输入正确的工艺编号!");
+
+		//处理文档编号
+		docNumber = getNumberFromStr(docNumber);//截取工艺编号
 		if (docName == null || docName.trim().length() <= 0)
 			docName = relPartNumber + "-" + docType;
 
