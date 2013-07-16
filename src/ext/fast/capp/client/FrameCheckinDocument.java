@@ -116,22 +116,11 @@ public class FrameCheckinDocument extends JDialog implements CAPPConstants,
 		String docNumber = (String) capp.get(DOC_NUMBER);
 		String docName = (String) capp.get(DOC_NAME);
 		String docType = (String) capp.get(DOC_TYPE);
-		
+
 		String newDocStr = (String) capp.get(DOC_NEW);
 		String relPartNumber = (String) capp.get(RELATED_PART_NUMBER);
 		docNumbered = docNumber != null && !docNumber.trim().equals("");
 		newDocument = newDocStr != null && newDocStr.equalsIgnoreCase("true");
-
-		
-		if(docType.equals("工艺文档")){
-			if (docNumber == null || docNumber.trim().equals(""))
-				throw new Exception("检入文档必需指定文档编号！");
-			if(getCharSize(docNumber, '-') < 2)
-				throw new Exception("请输入正确的工艺编号!");
-
-			//处理文档编号
-			docNumber = getNumberFromStr(docNumber);//截取工艺编号
-		}
 
 		if (docName == null || docName.trim().length() <= 0)
 			docName = relPartNumber;
@@ -1018,31 +1007,9 @@ public class FrameCheckinDocument extends JDialog implements CAPPConstants,
 		return panelIBAValue;
 	}
 
-	/**
-	 * 获取str中c的个数 
-	 */
-	private int getCharSize(String str, char c){
-		int size = 0;
-		for (char ch : str.toCharArray()) {
-			if(ch == c)
-				size++;
-		}
-		return size;
-	}
-
-	/**
-	 * 截取工艺编号 
-	 */
-	private String getNumberFromStr(String number){
-		String temp = number, result = "";
-		int end = temp.substring(0, temp.lastIndexOf('-')).lastIndexOf('-');
-		result = number.substring(end + 1, number.length());
-		return result;
-	}
-
 	public static void main(String[] args) throws Exception {
-		//		test(args);
-//		testGetDocInfo();
+//		test(args);
+		testGetDocInfo();
 	}
 
 	public static void test(String[] args) throws Exception {
